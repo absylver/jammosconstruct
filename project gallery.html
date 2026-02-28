@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Portfolio Gallery | Jammos Construction Nigeria Limited</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f49bd",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .modal-overlay {
+            background-color: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex min-h-screen flex-col">
+<!-- Navigation Bar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<div class="flex items-center gap-10">
+<div class="flex items-center gap-3">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined text-2xl">architecture</span>
+</div>
+<h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white uppercase">Jammos <span class="text-primary font-medium">Construction</span></h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="index.html">Home</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="about us.html">About</a>
+<a class="text-sm font-semibold text-primary" href="project gallery.html">Projects</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">Services</a>
+<a class="text-sm font-semibold text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="contact.html">Contact</a>
+</nav>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative hidden lg:block group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors">search</span>
+<input class="pl-10 pr-4 py-2 bg-slate-100 dark:bg-slate-800 border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-primary/20 focus:bg-white transition-all" placeholder="Search projects..." type="text"/>
+</div>
+<button class="bg-primary text-white px-6 py-2.5 rounded-lg text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+                        Request Quote
+                    </button>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Header Section -->
+<section class="max-w-7xl mx-auto px-6 pt-16 pb-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div class="max-w-2xl">
+<span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">Engineering Excellence</span>
+<h2 class="text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-4">Our Projects Portfolio</h2>
+<p class="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Showcasing our expertise in Civil Engineering, Mechanical Systems, and Telecom Infrastructure across Nigeria's dynamic landscape.
+                        </p>
+</div>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm font-medium">
+<span class="material-symbols-outlined text-xl">location_on</span>
+<span>Across Nigeria &amp; West Africa</span>
+</div>
+</div>
+<!-- Filters -->
+<div class="mt-12 flex flex-wrap gap-3">
+<button class="px-6 py-2.5 rounded-full bg-primary text-white text-sm font-bold shadow-md">All Projects</button>
+<button class="px-6 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-semibold hover:border-primary transition-colors">Civil Engineering</button>
+<button class="px-6 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-semibold hover:border-primary transition-colors">Mechanical Systems</button>
+<button class="px-6 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-semibold hover:border-primary transition-colors">Telecom Infrastructure</button>
+<button class="px-6 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-sm font-semibold hover:border-primary transition-colors">EPC Turnkey</button>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="max-w-7xl mx-auto px-6 py-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project Card 1 -->
+<div class="project-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-gallery='["https://picsum.photos/seed/bridge1/1200/800","https://picsum.photos/seed/bridge2/1200/800","https://picsum.photos/seed/bridge3/1200/800"]'>
+<div class="relative overflow-hidden aspect-[4/3]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Modern highway bridge construction in urban Nigeria" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCsEF6FE5K0qDLwCOIPQKh9zAq4hSLNZrLtQv0oMDlNQpJdZlMtRijJDWN4ZGaJBRPppSsYzV_BIVqqv6k0KnHobi1DbP3ZQRdAyA1UI86AWPQrmcna0m0RWqdxebZGmIBTO47ZowBGBZGbI2UwSKOMv0YhUZ-8RQgyBYX-XOc1HpNQRrPpsruvbC6G3h7bmwWyZiCGbQqYXPx6gwSbwg9CVvkx6w0EfpDD5iq4xtObrQolQ0qMyp0s-2vZLasGWWxx1EBfcD5Xjhk')"></div>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-widest backdrop-blur-sm">Civil</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Lagos Interstate Bridge</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span data-location="Lagos">Lagos, Nigeria</span>
+</div>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-6">
+<a class="text-primary text-sm font-bold flex items-center gap-2 group/btn" href="project gallery/lagos-interstate-bridge.html">
+                                    View Project
+                                    <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="text-slate-400 text-xs font-medium">Completed 2023</span>
+</div>
+</div>
+</div>
+<!-- Project Card 2 -->
+<div class="project-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-gallery='["https://picsum.photos/seed/piping1/1200/800","https://picsum.photos/seed/piping2/1200/800","https://picsum.photos/seed/piping3/1200/800"]'>
+<div class="relative overflow-hidden aspect-[4/3]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Complex industrial piping system at petrochemical plant" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDp4U8I48t6HA16EFe2cfyDjlIN6jzV9u0Tj9vDWXFid1EAsOM9ciNw6zwylV_2h3wUbqqUtei0qxwoufVUibzsy5sadxgq7RBV75k5IhUNj29tpN7I07jaWHZwP2Q5LqY4qt__IGieCBFSHQG0JgS2jZHamJKZWulY5d0hyaD47j0B9qaPskGkKVPLjDG8KH1T1LOqk0elofiAyLxEpBL85QAi_15Z2gE4PQhTzbJbfcVw7h6LlpC8ZQPQBVg1ul2EMt0Jf-NHQyE')"></div>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-widest backdrop-blur-sm">Mechanical</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Industrial Piping System</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span data-location="Rivers State">Rivers State, Nigeria</span>
+</div>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-6">
+<a class="text-primary text-sm font-bold flex items-center gap-2 group/btn" href="project gallery/industrial-piping-system.html">
+                                    View Project
+                                    <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="text-slate-400 text-xs font-medium">Completed 2022</span>
+</div>
+</div>
+</div>
+<!-- Project Card 3 -->
+<div class="project-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-gallery='["https://picsum.photos/seed/fiber1/1200/800","https://picsum.photos/seed/fiber2/1200/800","https://picsum.photos/seed/fiber3/1200/800"]'>
+<div class="relative overflow-hidden aspect-[4/3]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Fiber optic cable laying and telecom infrastructure" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnuUSTnrHX00jyVYZWYQ6YmfZn0qeY6uC3W-gBG7PxZ9HKe22OAG6SADydT2ldcA3OF0FHrjNSddq1gTzvhf2QaeQRFa4K69xWMO_3bamt9VuKEiMmCuJlz6LpXjLZws6_G1LqSoy2qRmQhxj6beZ71aWme0WGoVJcDOwgL9Iv4GdKndYSWurNyXD_O4HYXROPc289MVtx8cMWRzBAd3Z9J0iecdkznkxnR-S96-BsaT7o9AsE6ydJPm_RU4inBlG4qT2Bd_1-eLA')"></div>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-widest backdrop-blur-sm">Telecom</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">National Fiber Backbone</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span data-location="Abuja">Abuja, FCT</span>
+</div>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-6">
+<a class="text-primary text-sm font-bold flex items-center gap-2 group/btn" href="project gallery/national-fiber-backbone.html">
+                                    View Project
+                                    <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="text-slate-400 text-xs font-medium">In Progress</span>
+</div>
+</div>
+</div>
+<!-- Project Card 4 -->
+<div class="project-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-gallery='["https://picsum.photos/seed/petro1/1200/800","https://picsum.photos/seed/petro2/1200/800","https://picsum.photos/seed/petro3/1200/800"]'>
+<div class="relative overflow-hidden aspect-[4/3]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Petrochemical processing plant with steel structures" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAAdZwXBHoH3PwvUpPYoYOR1RK5AtwoU8EYD02-fsVnNLYo8CTiVuGdoYtxD_G7m3Y1pQEewVPDo1ILqY5cPLWGdxfrc2oMPA4yV2afDSMePIx2pGB92znYA4-T4s2qydexUtuSyZpy0UGXG1_4cpDhTHMx_AgoPZMB4-MxsGpNWLyPjVMYD-31jZNIcVEqEK12RmJpfkCujFP8b9Sdvkh5uIIlcEs1-MlUTnZTBHIElonB1Fdkt2IIwyYG__ZWnaJ0bsNON4P6Wb0')"></div>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-widest backdrop-blur-sm">EPC</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Petrochemical Plant EPC</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span data-location="Delta State">Delta State, Nigeria</span>
+</div>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-6">
+<a class="text-primary text-sm font-bold flex items-center gap-2 group/btn" href="project gallery/petrochemical-plant-epc.html">
+                                    View Project
+                                    <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="text-slate-400 text-xs font-medium">Completed 2021</span>
+</div>
+</div>
+</div>
+<!-- Project Card 5 -->
+<div class="project-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-gallery='["https://picsum.photos/seed/drainage1/1200/800","https://picsum.photos/seed/drainage2/1200/800","https://picsum.photos/seed/drainage3/1200/800"]'>
+<div class="relative overflow-hidden aspect-[4/3]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="Underground urban drainage network construction" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCs6GISZ-PWDLvH4cKNXPEVQXf0xmwUR1tw5WMjRv7fL62G3XgbtDPCANTCn-DsRLKlkIY6aSBejOWtjejmEP1VuXmtqYnpy2tSWkdc_scjLk6BN9agOZZg0rxWKuPPfNWJ-2Vgk-9sOuXSZC_fkk8SodPRAiO6yDXQ9Z9ULNAoFOXdnVbduoAsy_vSuxtCmbL887dHao6ipAI6OP9NafeCkXvLUFSCjxEhrQaNUPjFYgL8DIzWsAjhlnXaoCx2HqEvd3O_8TEJGos')"></div>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-widest backdrop-blur-sm">Civil</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Urban Drainage Network</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span data-location="Kano">Kano State, Nigeria</span>
+</div>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-6">
+<a class="text-primary text-sm font-bold flex items-center gap-2 group/btn" href="project gallery/urban-drainage-network.html">
+                                    View Project
+                                    <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="text-slate-400 text-xs font-medium">Completed 2023</span>
+</div>
+</div>
+</div>
+<!-- Project Card 6 -->
+<div class="project-card group bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-100 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-gallery='["https://picsum.photos/seed/tower1/1200/800","https://picsum.photos/seed/tower2/1200/800","https://picsum.photos/seed/tower3/1200/800"]'>
+<div class="relative overflow-hidden aspect-[4/3]">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" data-alt="High-rise telecom tower deployment in rural landscape" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAttx492vNFr01iWvsHHT0jHfV_oLH_ZJbs3-48xUIXto-1Ikdx-uVJ9ZC5IaNYZOPeYr8rWzM3-cL23XuHit9gPIQI-jM5KSA5z8YFGYfCwt6yo5irZXGNVSdGnR-mBxNb6XLag7myXckN_u60RQUibZ5W_L-Fo1icxd4zPCblNZxrVd4YZ2gItKUE9thRQV67eOdV4cdrBMkTKR8ALwEKKFFaHn80Zzi-_Gj1E1bRTdLS4KJvNNvCoOAZovT0Rf0riTJ4xeU-4aA')"></div>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-widest backdrop-blur-sm">Telecom</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors">Telecom Tower Deployment</h3>
+<div class="flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm mb-6">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span data-location="Oyo State">Oyo State, Nigeria</span>
+</div>
+<div class="mt-auto flex items-center justify-between border-t border-slate-100 dark:border-slate-700 pt-6">
+<a class="text-primary text-sm font-bold flex items-center gap-2 group/btn" href="project gallery/telecom-tower-deployment.html">
+                                    View Project
+                                    <span class="material-symbols-outlined text-sm transition-transform group-hover/btn:translate-x-1">arrow_forward</span>
+</a>
+<span class="text-slate-400 text-xs font-medium">Completed 2022</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-20 flex items-center justify-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 font-bold hover:border-primary transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 font-bold hover:border-primary transition-colors">3</button>
+<span class="px-2 text-slate-400">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 font-bold hover:border-primary transition-colors">12</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+</main>
+
+<!-- image lightbox overlay -->
+<div id="gallery-overlay" class="fixed inset-0 z-[200] flex items-center justify-center p-4 modal-overlay hidden">
+  <div class="relative w-full max-w-4xl">
+    <button id="overlay-close" class="absolute top-4 right-4 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full">
+      <span class="material-symbols-outlined text-2xl">close</span>
+    </button>
+    <img id="overlay-img" class="w-full h-auto rounded-xl" src="" alt="gallery" />
+    <button id="overlay-prev" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full z-20">
+      <span class="material-symbols-outlined text-3xl">chevron_left</span>
+    </button>
+    <button id="overlay-next" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white p-2 rounded-full z-20">
+      <span class="material-symbols-outlined text-3xl">chevron_right</span>
+    </button>
+  </div>
+</div>
+
+<!-- CTA Section -->
+<section class="bg-primary py-20 px-6 mt-12 overflow-hidden relative">
+<div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h3 class="text-3xl md:text-4xl font-black text-white mb-6">Have a large-scale project in mind?</h3>
+<p class="text-primary-foreground/80 text-white/80 text-lg mb-10 max-w-2xl mx-auto">
+                    Partner with Nigeria's leading EPC firm. From engineering design to procurement and final construction, we deliver excellence.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="px-8 py-4 bg-white text-primary rounded-xl font-bold text-lg shadow-xl hover:bg-slate-50 transition-all w-full sm:w-auto">Start a Consultation</button>
+<button class="px-8 py-4 bg-primary border-2 border-white/30 text-white rounded-xl font-bold text-lg hover:bg-white/10 transition-all w-full sm:w-auto">Our Services</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-slate-900 text-slate-300 py-16 px-6">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 mb-6">
+<div class="bg-primary p-1.5 rounded-lg text-white">
+<span class="material-symbols-outlined">architecture</span>
+</div>
+<h4 class="text-xl font-black text-white uppercase tracking-tight">Jammos</h4>
+</div>
+<p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Leading Engineering, Procurement, and Construction (EPC) partner for infrastructure development in Nigeria.
+                        </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" href="#"><span class="material-symbols-outlined text-sm">public</span></a>
+<a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" href="#"><span class="material-symbols-outlined text-sm">share</span></a>
+<a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors" href="#"><span class="material-symbols-outlined text-sm">mail</span></a>
+</div>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6">Services</h5>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Civil Engineering</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Mechanical Engineering</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Telecom Infrastructure</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Project Management</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6">Company</h5>
+<ul class="space-y-4 text-sm">
+<li><a class="hover:text-primary transition-colors" href="#">About Us</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Our Team</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Compliance</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-white font-bold mb-6">Contact Us</h5>
+<ul class="space-y-4 text-sm">
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+<span>Plot 123, Central Business District, Abuja, Nigeria</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-lg">call</span>
+<span>+234 (0) 800 JAMMOS</span>
+</li>
+<li class="flex gap-3">
+<span class="material-symbols-outlined text-primary text-lg">mail</span>
+<span>info@jammos-construction.com.ng</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-slate-800 mt-16 pt-8 flex flex-col md:flex-row justify-between gap-4 text-xs font-medium text-slate-500">
+<p>© 2024 Jammos Construction Nigeria Limited. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-white transition-colors" href="#">Cookie Policy</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+
+<script>
+(() => {
+  let overlayImages = [];
+  let overlayIdx = 0;
+  const overlay = document.getElementById('gallery-overlay');
+  const overlayImg = document.getElementById('overlay-img');
+  const overlayPrev = document.getElementById('overlay-prev');
+  const overlayNext = document.getElementById('overlay-next');
+  const overlayClose = document.getElementById('overlay-close');
+
+  document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', e => {
+      if (e.target.closest('a')) return; // let links navigate normally
+      const data = card.getAttribute('data-gallery');
+      overlayImages = data ? JSON.parse(data) : [];
+      if (overlayImages.length) {
+        overlayIdx = 0;
+        overlayImg.src = overlayImages[0];
+        overlay.classList.remove('hidden');
+      }
+    });
+  });
+
+  if (overlayPrev) overlayPrev.addEventListener('click', () => {
+    overlayIdx = (overlayIdx + overlayImages.length - 1) % overlayImages.length;
+    overlayImg.src = overlayImages[overlayIdx];
+  });
+  if (overlayNext) overlayNext.addEventListener('click', () => {
+    overlayIdx = (overlayIdx + 1) % overlayImages.length;
+    overlayImg.src = overlayImages[overlayIdx];
+  });
+  if (overlayClose) overlayClose.addEventListener('click', () => { overlay.classList.add('hidden'); });
+})();
+</script>
+
+</body></html>
