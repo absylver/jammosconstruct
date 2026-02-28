@@ -33,27 +33,54 @@
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
 <header class="glass-header sticky top-0 z-50 border-b border-slate-700/50">
-<div class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="bg-primary p-2 rounded-lg text-white">
-<span class="material-symbols-outlined text-2xl">architecture</span>
-</div>
-<h1 class="text-white text-xl font-extrabold tracking-tight uppercase">Jammos <span class="text-primary">Construction</span></h1>
-</div>
-<nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300">
-<a class="hover:text-primary transition-colors" href="index.html">Home</a>
-<a class="hover:text-primary transition-colors" href="about us.html">About</a>
-<a class="hover:text-primary transition-colors" href="#">Services</a>
-<a class="hover:text-primary transition-colors" href="project gallery.html">Projects</a>
-<a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
-</nav>
-<div class="flex items-center gap-4">
-<button class="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20">
-                    Request Consultation
-                </button>
-</div>
+<div class="max-w-7xl mx-auto px-6 lg:px-10">
+  <!-- Top row: logo + nav + button -->
+  <div class="h-20 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="bg-primary p-2 rounded-lg text-white">
+        <span class="material-symbols-outlined text-2xl">architecture</span>
+      </div>
+      <h1 class="text-white text-lg md:text-xl font-extrabold tracking-tight uppercase">Jammos <span class="text-primary">Construction</span></h1>
+    </div>
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-300 flex-1 justify-center">
+      <a class="hover:text-primary transition-colors" href="index.html">Home</a>
+      <a class="hover:text-primary transition-colors" href="about us.html">About</a>
+      <a class="hover:text-primary transition-colors" href="#">Services</a>
+      <a class="hover:text-primary transition-colors" href="project gallery.html">Projects</a>
+      <a class="hover:text-primary transition-colors" href="contact.html">Contact</a>
+    </nav>
+    <!-- Desktop button + mobile burger -->
+    <div class="flex items-center gap-4">
+      <button class="hidden md:block bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20">
+        Request Consultation
+      </button>
+      <button id="mobile-menu-btn" class="md:hidden text-white p-2">
+        <span class="material-symbols-outlined text-2xl">menu</span>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile nav + button (hidden by default) -->
+  <div id="mobile-nav" class="hidden md:hidden pb-4 pt-2 border-t border-slate-700/30">
+    <nav class="flex flex-col gap-2 text-sm font-semibold text-slate-300 mb-4">
+      <a class="w-full text-center py-2.5 hover:text-primary transition-colors" href="index.html">Home</a>
+      <a class="w-full text-center py-2.5 hover:text-primary transition-colors" href="about us.html">About</a>
+      <a class="w-full text-center py-2.5 hover:text-primary transition-colors" href="#">Services</a>
+      <a class="w-full text-center py-2.5 hover:text-primary transition-colors" href="project gallery.html">Projects</a>
+      <a class="w-full text-center py-2.5 hover:text-primary transition-colors" href="contact.html">Contact</a>
+    </nav>
+    <button class="w-full bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20">
+      Request Consultation
+    </button>
+  </div>
 </div>
 </header>
+
+<script>
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', function() {
+    document.getElementById('mobile-nav').classList.toggle('hidden');
+  });
+</script>
 <section class="relative h-[85vh] w-full flex items-center overflow-hidden">
 <div class="absolute inset-0 bg-navy-deep/60 z-10"></div>
 <div class="absolute inset-0 bg-cover bg-center" data-alt="High-quality industrial construction site with heavy machinery" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDE9SvDebh5EvqCVXMy9TMp5fVBLlZuT3KP6zSn7u-myaj1h1SgQtIBjcXPToP8yFcXNTZ0zcCrGn6meA2qQOAN_3EZkhbHwAwuJvggTAmQXL58RchitIIiXpqHomdf1PywFhrleMl9KNvzx4WRrRue1l00ShvMVuPFSJVxkXcDFjocybi_w8ptE8BnOTd3tZfEF_imiTMbCSfcvRPy62tNG3RRrWiqYyddEF6WLqV66imKddplDfgt-lAopQUf540zOWEQgPnhC8o');"></div>
@@ -62,27 +89,27 @@
 <span class="inline-block px-4 py-1.5 rounded-full bg-primary/20 border border-primary/30 text-primary text-sm font-bold mb-6">
                     Pioneering Nigeria's Infrastructure
                 </span>
-<h1 class="text-5xl lg:text-7xl font-black text-white leading-[1.1] mb-8">
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white leading-[1.1] mb-8">
                     Engineering Excellence. <br/>
 <span class="text-primary">Structured Delivery.</span><br/>
                     Sustainable Impact.
                 </h1>
-<p class="text-lg text-slate-300 mb-10 leading-relaxed max-w-2xl border-l-4 border-accent pl-6">
+<p class="text-base sm:text-lg text-slate-300 mb-10 leading-relaxed max-w-2xl border-l-4 border-accent pl-6">
                     Leading EPC firm delivering world-class infrastructure and industrial solutions across Nigeria. We build with integrity, innovation, and a commitment to national growth.
                 </p>
-<div class="flex flex-wrap gap-4">
-<button class="bg-primary text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary/90 transition-all flex items-center gap-2">
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="w-full sm:w-auto bg-primary text-white px-8 py-4 rounded-lg font-bold text-base sm:text-lg hover:bg-primary/90 transition-all flex items-center justify-center sm:justify-start gap-2">
                         View Our Services
                         <span class="material-symbols-outlined">arrow_forward</span>
 </button>
-<button class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-lg font-bold text-lg hover:bg-white/20 transition-all">
+<button class="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-lg font-bold text-base sm:text-lg hover:bg-white/20 transition-all text-center">
                         Recent Projects
                     </button>
 </div>
 </div>
 </div>
 </section>
-<div class="relative z-30 mt-16 max-w-7xl mx-auto px-6">
+<div class="relative z-30 mt-8 sm:mt-12 md:mt-16 max-w-7xl mx-auto px-6">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-1">
 <div class="bg-white dark:bg-background-dark p-8 border border-slate-200 dark:border-slate-800 shadow-xl flex items-center gap-6 rounded-l-xl">
 <span class="material-symbols-outlined text-4xl text-primary">verified</span>
@@ -120,7 +147,7 @@
 </div>
 <div>
 <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-4">About Jammos Construction</h2>
-<h3 class="text-4xl font-extrabold mb-6 leading-tight">Nigeria's Partner in Strategic Infrastructure</h3>
+<h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-6 leading-tight">Nigeria's Partner in Strategic Infrastructure</h3>
 <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mb-8">
                     Jammos Construction Nigeria Limited is a premier engineering and EPC firm dedicated to structural integrity and sustainable development. We combine technical expertise with ethical governance to deliver complex projects across multiple sectors.
                 </p>
@@ -147,7 +174,7 @@
 <section class="py-24 bg-slate-100 dark:bg-background-dark/50">
 <div class="max-w-7xl mx-auto px-6 lg:px-10 text-center mb-16">
 <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Our Expertise</h2>
-<h3 class="text-4xl font-extrabold mb-4">Integrated Engineering Solutions</h3>
+<h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4">Integrated Engineering Solutions</h3>
 <p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">Providing a full spectrum of engineering, procurement, and construction services tailored for large-scale industrial growth.</p>
 </div>
 <div class="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -193,14 +220,14 @@
 </div>
 </div>
 </section>
-<section class="py-24 bg-navy-deep text-white overflow-hidden relative">
+<section class="py-12 sm:py-16 md:py-24 bg-navy-deep text-white overflow-hidden relative">
 <div class="absolute right-0 top-0 opacity-10">
 <span class="material-symbols-outlined text-[400px]">engineering</span>
 </div>
 <div class="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col lg:flex-row gap-16 items-center">
 <div class="flex-1">
 <h2 class="text-accent font-bold tracking-widest uppercase text-sm mb-4">Why Partner With Us</h2>
-<h3 class="text-4xl font-extrabold mb-8">Unwavering Commitment to Quality and Integrity</h3>
+<h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-8">Unwavering Commitment to Quality and Integrity</h3>
 <div class="space-y-8">
 <div class="flex gap-6">
 <div class="size-12 rounded-full bg-accent/20 border border-accent/40 flex items-center justify-center flex-shrink-0">
@@ -240,7 +267,7 @@
 </div>
 </div>
 </section>
-<section class="py-24 max-w-7xl mx-auto px-6 lg:px-10">
+<section class="py-12 sm:py-16 md:py-24 mt-8 sm:mt-12 md:mt-16 max-w-7xl mx-auto px-6 lg:px-10">
 <div class="bg-slate-50 dark:bg-background-dark/30 rounded-3xl p-10 lg:p-16 border border-slate-200 dark:border-slate-800">
 <div class="flex flex-col md:flex-row gap-12 items-center">
 <div class="md:w-1/3">
@@ -283,11 +310,11 @@
 </div>
 </div>
 </section>
-<section class="py-24 bg-slate-100 dark:bg-background-dark/50">
-<div class="max-w-7xl mx-auto px-6 lg:px-10 mb-12 flex justify-between items-end">
+<section class="py-12 sm:py-16 md:py-24 bg-slate-100 dark:bg-background-dark/50">
+<div class="max-w-7xl mx-auto px-6 lg:px-10 mb-8 sm:mb-10 md:mb-12 flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4">
 <div>
 <h2 class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Portfolio</h2>
-<h3 class="text-4xl font-extrabold">Landmark Projects</h3>
+<h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold">Landmark Projects</h3>
 </div>
 <button class="text-primary font-bold flex items-center gap-2 border-b-2 border-primary pb-1">View Full Portfolio</button>
 </div>
