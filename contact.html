@@ -3,6 +3,7 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -51,8 +52,8 @@
     </nav>
     <!-- Desktop button + mobile burger -->
     <div class="flex items-center gap-4">
-      <button class="hidden md:flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold shadow-md hover:bg-blue-700 transition-all">
-        Get a Quote
+      <button onclick="scrollToForm()" class="hidden md:flex min-w-[120px] cursor-pointer items-center justify-center rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold shadow-md hover:bg-blue-700 transition-all">
+        Request Consultation
       </button>
       <button id="mobile-menu-btn" class="md:hidden text-slate-900 dark:text-white p-2">
         <span class="material-symbols-outlined text-2xl">menu</span>
@@ -68,8 +69,8 @@
       <a class="w-full text-center py-2.5 hover:text-primary transition-colors" href="project gallery.html">Projects</a>
       <a class="w-full text-center py-2.5 text-primary font-bold" href="contact.html">Contact</a>
     </nav>
-    <button class="w-full bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-bold shadow-md hover:bg-blue-700 transition-all">
-      Get a Quote
+    <button onclick="scrollToForm()" class="w-full bg-primary text-white px-5 py-2.5 rounded-lg text-sm font-bold shadow-md hover:bg-blue-700 transition-all">
+      Request Consultation
     </button>
   </div>
 </div>
@@ -89,8 +90,8 @@
 <div class="max-w-6xl mx-auto relative z-10">
 <h1 class="text-white text-4xl md:text-5xl font-black leading-tight tracking-tight mb-4">Contact &amp; Inquiries</h1>
 <p class="text-slate-300 text-lg max-w-2xl">
-                            Partner with Nigeria's leading engineering and EPC firm for world-class infrastructure, power, and industrial projects.
-                        </p>
+              Engage our engineering and EPC specialists for large-scale infrastructure, power, industrial, and commercial developments across Nigeria. We deliver precision, compliance, and execution excellence.
+            </p>
 </div>
 </div>
 <div class="max-w-6xl mx-auto px-6 py-12">
@@ -98,12 +99,12 @@
 <!-- Contact Info Column -->
 <div class="lg:col-span-4 flex flex-col gap-6">
 <div class="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
-<h3 class="text-xl font-bold mb-6 text-slate-900 dark:text-white flex items-center gap-2">
+<h3 class="text-2xl tracking-wide font-bold mb-6 text-slate-900 dark:text-white flex items-center gap-2">
 <span class="material-symbols-outlined text-primary">corporate_fare</span>
                                     Corporate Office
                                 </h3>
-<div class="space-y-6">
-<div class="flex gap-4">
+<div class="space-y-8">
+<div class="flex gap-4 transition duration-300 hover:bg-slate-50 dark:hover:bg-slate-700/30 p-3 rounded-lg">
 <div class="bg-primary/10 p-3 rounded-lg text-primary h-fit">
 <span class="material-symbols-outlined">location_on</span>
 </div>
@@ -116,7 +117,7 @@
                                             </p>
 </div>
 </div>
-<div class="flex gap-4">
+<div class="flex gap-4 transition duration-300 hover:bg-slate-50 dark:hover:bg-slate-700/30 p-3 rounded-lg">
 <div class="bg-primary/10 p-3 rounded-lg text-primary h-fit">
 <span class="material-symbols-outlined">call</span>
 </div>
@@ -126,7 +127,7 @@
 <p class="text-slate-600 dark:text-slate-400 text-sm">+234 1 234 5678</p>
 </div>
 </div>
-<div class="flex gap-4">
+<div class="flex gap-4 transition duration-300 hover:bg-slate-50 dark:hover:bg-slate-700/30 p-3 rounded-lg">
 <div class="bg-primary/10 p-3 rounded-lg text-primary h-fit">
 <span class="material-symbols-outlined">mail</span>
 </div>
@@ -138,42 +139,57 @@
 </div>
 </div>
 </div>
-<!-- Map Placeholder -->
-<div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 h-64 bg-slate-200 dark:bg-slate-800 relative group">
-<div class="absolute inset-0 bg-cover bg-center" data-alt="Map showing Victoria Island Lagos location" data-location="Lagos, Nigeria" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAVvEprUTxihvFwmEzDXj4UrBcTt_aMTLU62vPu1NyPNnmAcDhPUIqvmVmEDm70SZFqcocma807R1uXtIOjrk7pC8UitbjG27Eg_jx_r2GzDpH3sUNOBr3X12Kmq4Zky7Pc_0sc_gc50f7vZ4SIPNbbM_TZN_cDj67DBDgOi00DgFS1eKT0bhSm0_oQxXZ2AQ3LyCZLqvdGxqVAE7xjzfHfhnN0eU9mKpoCxe7T6Vwprvz7bTjocY-TJmQ8uXw5Fd444WAfHD-dwfA')"></div>
-<div class="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
-<div class="absolute bottom-4 left-4 bg-white dark:bg-slate-900 px-3 py-1 rounded text-xs font-bold shadow-lg">
-                                    View on Google Maps
-                                </div>
+<!-- Embedded Google Map (Victoria Island, Lagos) -->
+<div class="rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 h-64">
+  <iframe src="https://www.google.com/maps?q=Victoria+Island+Lagos&output=embed" width="100%" height="100%" class="w-full h-full border-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
 </div>
 <!-- Inquiry Form Column -->
 <div class="lg:col-span-8">
-<div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700">
+<div class="bg-white dark:bg-slate-800 p-8 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 transition duration-300 hover:shadow-xl hover:-translate-y-1">
 <div class="mb-8">
-<h2 class="text-2xl font-bold text-slate-900 dark:text-white">Project Inquiry Form</h2>
-<p class="text-slate-500 dark:text-slate-400 mt-2">Submit your requirements and our technical team will contact you within 24 hours.</p>
+  <span class="inline-block text-xs font-bold tracking-widest text-primary uppercase mb-2">Consultation & Project Brief</span>
+  <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white leading-tight">Schedule a Technical Consultation</h2>
+  <p class="text-slate-500 dark:text-slate-400 mt-3 max-w-2xl">Provide a high-level overview of your project requirements. Our engineering and project management team will review your submission and respond within 24 hours to discuss feasibility, timelines, and next steps.</p>
 </div>
-<form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<form id="consultation-form" method="POST" action="https://formspree.io/f/xeeldwez" name="consultation-form" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <input type="hidden" name="_subject" value="New Project Inquiry - Jammos Construction">
 <div class="flex flex-col gap-2">
-<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Full Name</label>
-<input class="rounded-lg border-slate-300 dark:border-slate-600 bg-transparent focus:ring-primary focus:border-primary py-3 px-4" placeholder="e.g. Engr. Chidi Okafor" type="text"/>
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Principal Contact Name</label>
+<input name="full_name" required class="rounded-lg border-slate-300 dark:border-slate-600 bg-transparent focus:ring-primary focus:border-primary py-3 px-4" placeholder="e.g. Engr. Chidi Okafor" type="text"/>
 </div>
 <div class="flex flex-col gap-2">
-<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Company / Organization</label>
-<input class="rounded-lg border-slate-300 dark:border-slate-600 bg-transparent focus:ring-primary focus:border-primary py-3 px-4" placeholder="e.g. Federal Ministry of Works" type="text"/>
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Organization / Client Entity</label>
+<input name="company" class="rounded-lg border-slate-300 dark:border-slate-600 bg-transparent focus:ring-primary focus:border-primary py-3 px-4" placeholder="e.g. Federal Ministry of Works" type="text"/>
 </div>
 <div class="flex flex-col gap-2">
 <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Email Address</label>
-<input class="rounded-lg border-slate-300 dark:border-slate-600 bg-transparent focus:ring-primary focus:border-primary py-3 px-4" placeholder="official@company.com.ng" type="email"/>
+<input name="email" required class="rounded-lg border-slate-300 dark:border-slate-600 bg-transparent focus:ring-primary focus:border-primary py-3 px-4" placeholder="official@company.com.ng" type="email"/>
 </div>
 <div class="flex flex-col gap-2">
-<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Phone Number</label>
-<input class="rounded-lg border-slate-300 dark:border-slate-600 bg-transparent focus:ring-primary focus:border-primary py-3 px-4" placeholder="+234..." type="tel"/>
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Direct Contact Number</label>
+<input name="phone" required class="rounded-lg border-slate-300 dark:border-slate-600 bg-transparent focus:ring-primary focus:border-primary py-3 px-4" placeholder="+234..." type="tel"/>
 </div>
+
+<div class="flex flex-col gap-2">
+  <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Preferred Consultation Date</label>
+  <input name="consultation_date" type="date" class="rounded-lg border-slate-300 dark:border-slate-600 bg-transparent focus:ring-primary focus:border-primary py-3 px-4" />
+</div>
+
+<div class="flex flex-col gap-2">
+  <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Consultation Type</label>
+  <select name="consultation_type" class="rounded-lg border-slate-300 dark:border-slate-600 bg-transparent focus:ring-primary focus:border-primary py-3 px-4 appearance-none">
+    <option value="">Select an option</option>
+    <option>Physical Meeting</option>
+    <option>Virtual Meeting</option>
+    <option>Phone Call</option>
+  </select>
+</div>
+<div class="md:col-span-2 border-t border-slate-200 dark:border-slate-700 my-4"></div>
+
 <div class="flex flex-col gap-2 md:col-span-2">
 <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Project Type</label>
-<select class="rounded-lg border-slate-300 dark:border-slate-600 bg-transparent focus:ring-primary focus:border-primary py-3 px-4 appearance-none">
+<select name="project_type" required class="rounded-lg border-slate-300 dark:border-slate-600 bg-transparent focus:ring-primary focus:border-primary py-3 px-4 appearance-none">
 <option value="">Select an option</option>
 <option value="civil">Civil Engineering &amp; Infrastructure</option>
 <option value="power">Power Generation &amp; Distribution</option>
@@ -184,13 +200,18 @@
 </select>
 </div>
 <div class="flex flex-col gap-2 md:col-span-2">
-<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Message / Scope of Work</label>
-<textarea class="rounded-lg border-slate-300 dark:border-slate-600 bg-transparent focus:ring-primary focus:border-primary py-3 px-4" placeholder="Please provide details about your project or inquiry..." rows="5"></textarea>
+<label class="text-sm font-bold text-slate-700 dark:text-slate-300">Project Overview & Scope Requirements</label>
+<textarea name="message" required class="rounded-lg border-slate-300 dark:border-slate-600 bg-transparent focus:ring-primary focus:border-primary py-3 px-4" placeholder="Please provide details about your project or inquiry..." rows="5"></textarea>
 </div>
+
+<div id="form-success" class="hidden md:col-span-2 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-300 px-6 py-4 rounded-lg text-sm font-medium">
+  Thank you. Our technical team will contact you within 24 hours.
+</div>
+
 <div class="md:col-span-2 mt-4 flex justify-end">
 <button class="w-full md:w-auto px-10 py-4 bg-accent text-white font-bold rounded-lg shadow-lg hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2 uppercase tracking-wider" type="submit">
-                                            Send Message
-                                            <span class="material-symbols-outlined">send</span>
+  Submit Project Brief
+  <span class="material-symbols-outlined">send</span>
 </button>
 </div>
 </form>
@@ -203,18 +224,62 @@
 <footer class="bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-12 px-6 md:px-20 mt-12">
 <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
 <div class="flex items-center gap-3">
-<div class="size-6 flex items-center justify-center bg-slate-200 dark:bg-slate-800 rounded text-primary">
+<div class="size-8 flex items-center justify-center bg-slate-200 dark:bg-slate-800 rounded text-primary">
 <span class="material-symbols-outlined text-sm">architecture</span>
 </div>
 <p class="text-slate-600 dark:text-slate-400 text-sm font-medium">© 2024 Jammos Construction Nigeria Limited. All Rights Reserved.</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Engineering &amp; EPC Solutions Across Nigeria</p>
 </div>
 <div class="flex gap-6">
-<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
-<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">work</span></a>
-<a class="text-slate-400 hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-slate-400 transition duration-300 hover:scale-110 hover:text-primary" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-slate-400 transition duration-300 hover:scale-110 hover:text-primary" href="#"><span class="material-symbols-outlined">work</span></a>
+<a class="text-slate-400 transition duration-300 hover:scale-110 hover:text-primary" href="#"><span class="material-symbols-outlined">share</span></a>
 </div>
 </div>
 </footer>
+
+<!-- floating whatsapp button -->
+<a href="https://wa.me/234800JAMMOS" target="_blank" class="flex items-center justify-center fixed bottom-6 right-6 p-4 rounded-full shadow-xl z-50">
+  <i class="fa fa-whatsapp" style="font-size:3rem; color:green"></i>
+</a>
+
+<script>
+(() => {
+  const form = document.getElementById('consultation-form');
+  const successBox = document.getElementById('form-success');
+  if (!form) return;
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const url = form.action;
+    const data = new FormData(form);
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        if (successBox) successBox.classList.remove('hidden');
+        form.reset();
+        setTimeout(() => { if (successBox) successBox.classList.add('hidden'); }, 8000);
+      } else {
+        alert('Submission failed. Please try again later.');
+      }
+    } catch (err) {
+      alert('Submission failed. Please check your connection and try again.');
+    }
+  });
+})();
+</script>
+</script>
+
+<script>
+  function scrollToForm() {
+    const el = document.getElementById('consultation-form');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    else window.location.href = 'contact.html#consultation-form';
+  }
+</script>
 </div>
 </div>
 </body></html>
