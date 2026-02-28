@@ -381,12 +381,16 @@
 (() => {
   let overlayImages = [];
   let overlayIdx = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
   const overlay = document.getElementById('gallery-overlay');
   const overlayImg = document.getElementById('overlay-img');
   const overlayPrev = document.getElementById('overlay-prev');
   const overlayNext = document.getElementById('overlay-next');
   const overlayClose = document.getElementById('overlay-close');
 
+  // Open overlay when clicking project card
   document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('click', e => {
       if (e.target.closest('a')) return; // let links navigate normally
@@ -400,15 +404,65 @@
     });
   });
 
-  if (overlayPrev) overlayPrev.addEventListener('click', () => {
+  // Close on X button click
+  if (overlayClose) overlayClose.addEventListener('click', () => { 
+    overlay.classList.add('hidden'); 
+  });
+
+  // Close on image tap
+  if (overlayImg) overlayImg.addEventListener('click', (e) => {
+    e.stopPropagation();
+    overlay.classList.add('hidden');
+  });
+
+  // Prevent overlay from closing when clicking arrows or inside content
+  const overlayContent = overlay?.querySelector('.relative');
+  if (overlayContent) {
+    overlayContent.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
+
+  // Swipe detection for touch
+  if (overlay) {
+    overlay.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    overlay.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, false);
+  }
+
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swiped left - show next image
+        overlayIdx = (overlayIdx + 1) % overlayImages.length;
+      } else {
+        // Swiped right - show previous image
+        overlayIdx = (overlayIdx + overlayImages.length - 1) % overlayImages.length;
+      }
+      overlayImg.src = overlayImages[overlayIdx];
+    }
+  }
+
+  // Arrow button controls
+  if (overlayPrev) overlayPrev.addEventListener('click', (e) => {
+    e.stopPropagation();
     overlayIdx = (overlayIdx + overlayImages.length - 1) % overlayImages.length;
     overlayImg.src = overlayImages[overlayIdx];
   });
-  if (overlayNext) overlayNext.addEventListener('click', () => {
+  
+  if (overlayNext) overlayNext.addEventListener('click', (e) => {
+    e.stopPropagation();
     overlayIdx = (overlayIdx + 1) % overlayImages.length;
     overlayImg.src = overlayImages[overlayIdx];
   });
-  if (overlayClose) overlayClose.addEventListener('click', () => { overlay.classList.add('hidden'); });
 })();
 </script>
 

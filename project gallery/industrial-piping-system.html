@@ -175,21 +175,66 @@
   if(nextBtn && idx<pages.length-1) nextBtn.addEventListener('click',()=>{ location.href = pages[idx+1]; });
   if(closeBtn) closeBtn.addEventListener('click',()=>{ location.href = '../project gallery.html'; });
 
-  // image gallery carousel
+  // image gallery carousel with swipe and tap support
   const galleryImages = [
     'https://picsum.photos/seed/piping1/1200/800',
     'https://picsum.photos/seed/piping2/1200/800',
     'https://picsum.photos/seed/piping3/1200/800'
   ];
   let galleryIdx = 0;
+  let touchStartX = 0;
+  let touchEndX = 0;
+  
   const galleryImg = document.getElementById('gallery-img');
   const galleryPrev = document.getElementById('gallery-prev');
   const galleryNext = document.getElementById('gallery-next');
-  if(galleryPrev) galleryPrev.addEventListener('click',()=>{
+  const imageGallery = document.getElementById('image-gallery');
+  
+  // Swipe detection
+  if (imageGallery) {
+    imageGallery.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, false);
+    
+    imageGallery.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, false);
+  }
+  
+  function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+      if (diff > 0) {
+        // Swiped left - show next image
+        galleryIdx = (galleryIdx + 1) % galleryImages.length;
+      } else {
+        // Swiped right - show previous image
+        galleryIdx = (galleryIdx + galleryImages.length - 1) % galleryImages.length;
+      }
+      if(galleryImg) galleryImg.src = galleryImages[galleryIdx];
+    }
+  }
+  
+  // Tap image to cycle through
+  if(galleryImg) {
+    galleryImg.addEventListener('click', (e) => {
+      if (e.target.closest('button')) return; // don't close if button was clicked
+      galleryIdx = (galleryIdx + 1) % galleryImages.length;
+      galleryImg.src = galleryImages[galleryIdx];
+    });
+  }
+  
+  // Arrow button controls
+  if(galleryPrev) galleryPrev.addEventListener('click',(e)=>{
+    e.stopPropagation();
     galleryIdx = (galleryIdx + galleryImages.length - 1) % galleryImages.length;
     if(galleryImg) galleryImg.src = galleryImages[galleryIdx];
   });
-  if(galleryNext) galleryNext.addEventListener('click',()=>{
+  if(galleryNext) galleryNext.addEventListener('click',(e)=>{
+    e.stopPropagation();
     galleryIdx = (galleryIdx + 1) % galleryImages.length;
     if(galleryImg) galleryImg.src = galleryImages[galleryIdx];
   });
